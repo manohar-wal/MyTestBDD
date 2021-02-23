@@ -47,4 +47,31 @@
             <version>3.9</version>
         </dependency>
   </dependencies>
+  <build>
+        <pluginManagement>
+            <plugins>
+                  <plugin>    
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+        </configuration>
+                  </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M5</version>
+                    <configuration>
+                    <excludes>
+                        <exclude>none</exclude>
+                    </excludes>
+                    <includes>
+                        <!-- Include your Cucumber tests, as an example -->
+                        <include>**/*cucumberRunner.java</include>
+                    </includes>
+                </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>
